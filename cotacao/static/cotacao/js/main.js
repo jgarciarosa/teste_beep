@@ -2,26 +2,28 @@ var url = '/api/data/'
 
 window.onload = function() {
 
+    //carrega a pagina
 	$(function() {
 		cotacao.init();
 	});
 
+    //escuta os eventos de click dos botoes da página, passando como paraâmetro sua respectiva cotação
 	$('.brl').on('click', function(){
 	    cotacao.get_dados('BRL');
 	});
-
 	$('.ars').on('click', function(){
 	    cotacao.get_dados('ARS');
 	});
-
 	$('.eur').on('click', function(){
 	    cotacao.get_dados('EUR');
 	});
 
 	var cotacao = {
+	    //passa como parâmetro a cotação do real para inicialização da página
 	    init : function(){
             cotacao.get_dados('BRL');
 	    },
+	    //recebe os dados da api
 	    get_dados : function(moeda){
 	        $.ajax({
                 method: "GET",
@@ -37,6 +39,7 @@ window.onload = function() {
                 },
             })
 	    },
+	    //exibe na tela as estatisticas das cotações passadas como parâmetro
 	    cria_chart : function(){
 	        Highcharts.chart('container', {
 	            chart: {
