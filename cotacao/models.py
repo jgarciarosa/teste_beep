@@ -8,7 +8,7 @@ dia1 = date.fromordinal(hoje.toordinal() - 6)
 dias = []
 
 #chave para requisição do currencylayer
-key = '9a4209e2e5de1f04de3b3156ee740e07'
+key = 'a0b70a88d40ae4f5226e23d401b4ab94'
 
 
 brl_cotacoes = []
