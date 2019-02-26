@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from cotacao import models
+from cotacao import services
 
 
 def index(request):
@@ -8,4 +8,4 @@ def index(request):
 
 
 def get_dados(request):
-    return JsonResponse(models.cotacoes)
+    return JsonResponse(services.cotacoes)
